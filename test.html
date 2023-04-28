@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="images/mozello.ico">
+    <title>
+        Mozello - the easiest way to create a website, blog or online ...
+    </title>
+    <!-- Bootstrap  css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- icon -->
+    <link rel="stylesheet" href="bootstrap-icons-1.10.3/bootstrap-icons.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body ng-app="myapp" ng-controller="myCtrl">
+    <div ng-app="EXCtrl"></div>
+    <div id="headerPage">
+        <div class="inner">
+            <h1>Examples</h1>
+        </div>
+    </div>
+    <!-- content -->
+    <div>
+        <div class="inner">
+            <h1>Demo websites</h1>
+
+            <p>Here are some examples of what can be created with Mozello.</p>
+            <!-- <ul ng-repeat="p in products | limitTo : 8    :1 ">
+                <li><a href="#!detail/{{$index}}"><img src="{{p.Image}}" class="poly-pord"></a></li>
+            </ul> -->
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class=" m-3" ng-repeat="p in products | limitTo : 8    :1 ">
+                        <a href="#!detail/{{$index}}"><img src="{{p.Image}}" class="sanpham"></a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    </div>
+    </div>
+
+    <!-- scrip -->
+    <!-- scrips js,jquery -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="EXamples.js"></script>
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myCtrl", function ($scope, $http) {
+            $scope.products = [];
+            $http.get("products.json").then(
+                function (response) {
+                    //sucess
+                    $scope.products = response.data;
+                },
+                function (response) {
+                    //error
+                    alert("lỗi!");
+                }
+            );
+        });
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/detail/:url", {
+                    templateUrl: "detailProduct.html?" + Math.random(),
+                    controller: "myCtrl"
+                })
+                .when("/cart", {
+                    templateUrl: "cart.html?" + Math.random(),
+                    controller: "myCtrl"
+                })
+                .otherwise({
+                    templateUrl: "test.html",
+                })
+
+        });
+    </script>
+    <style>
+        .sanpham {
+            max-width: 200px;
+        }
+
+        ul>li>a>img {
+            max-width: 600px;
+        }
+    </style>
+</body>
+
+</html>

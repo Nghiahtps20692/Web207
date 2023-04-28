@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body class="container-fluid">
+
+    <div id="headerPage" class="p-5">
+        <div class="inner">
+            <h1 class="text-center">Examples</h1>
+        </div>
+        <h1 class="fw-bold">Demo websites</h1>
+        <p>Here are some examples of what can be created with Mozello.</p>
+    </div>
+    <!-- content -->
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
+        <input ng-model="keyword" type="text" class="form-control" placeholder="Search" aria-label="Username"
+            aria-describedby="basic-addon1">
+    </div>
+
+    <!-- <div class="row p-5">
+        <div class="col-sm-5 m-5 xemsp" ng-repeat="p in products | filter :{name : keyword} ">
+            <a href="#!detail/{{$index}}"><img src="{{p.Image}}" class="sanpham object-fit-sm-contain"></a>
+
+        </div>
+    </div> -->
+
+
+    <!-- chuyen trang -->
+
+    <div class="row p-5">
+        <div class="col-sm-5 m-5 xemsp" ng-repeat="p in products | filter :{name : keyword} | limitTo : 4 : batdau ">
+            <a href="#!detail/{{$index}}"><img src="{{p.Image}}" class="sanpham object-fit-sm-contain"></a>
+
+        </div>
+    </div>
+    <div class="text-center p-5 mb-5">
+        <button ng-Click="batdau=0">1</button>
+        <button ng-Click="batdau=4">2</button>
+        <button ng-Click="batdau=8">3</button>
+        <button ng-Click="batdau=12">4</button>
+    </div>
+
+
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myCtrl", function ($scope) {
+            $scope.chuyentrang = function (trang) {
+                $scope.batdau = (trang - 1) * 4;
+            };
+            $scope.sotrang = function () {
+                var sotrang = $scope.ceil(products.lenght / 4);
+                var mang = [];
+                for (let i = 1; i <= sotrang; i++) {
+                    mang.push(i);
+                }
+                return mang;
+            };
+        });
+    </script>
+
+
+    <style>
+        .sanpham {
+            max-width: 600px;
+            object-fit: cover;
+        }
+
+        .xemsp a {
+            background: #1abc9c;
+        }
+
+        .xemsp a img {
+            opacity: 1;
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+
+        .xemsp a:hover img {
+            opacity: .5;
+        }
+    </style>
+</body>
+
+</html>

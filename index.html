@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="images/mozello.ico">
+  <title>
+    Mozello - the easiest way to create a website, blog or online ...
+  </title>
+  <!-- Bootstrap  css-->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <!-- icon -->
+  <link rel="stylesheet" href="bootstrap-icons-1.10.3/bootstrap-icons.css" />
+  <!-- css -->
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body ng-app="myapp">
+  <div class="container-fluid bg-light">
+    <div ng-include="'menu.html'" class="sticky-top" style="height: 200px;"></div>
+    <!-- content -->
+    <div>
+      <div class="container-fluid" ng-view ng-controller="myCtrl">
+
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <div ng-include="'footer.html'"></div>
+  <!-- Footer -->
+  </div>
+  <!-- scrips js,jquery -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular-route.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+
+</html>

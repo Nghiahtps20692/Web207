@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Mozello - the easiest way to create a website, blog or online ...
+  </title>
+  <!-- Bootstrap  css-->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <!-- icon -->
+  <link rel="stylesheet" href="bootstrap-icons-1.10.3/bootstrap-icons.css" />
+  <!-- css -->
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+
+<body class="bg-light" ng-app="login" ng-view>
+  <div class="mx-auto my-5 d-block" style="width: 170px">
+    <a href="index.html">
+      <img class="w-100" src="images/mozello-logoli.svg" alt="Title" />
+    </a>
+  </div>
+  <div>
+    <div class="card position-relative mx-auto p-4 shadow p-3 mb-5 bg-body rounded " style="max-width: 470px">
+      <h1 class="mb-4 fs-3 fw-bolder w-100" style="text-align: center">
+        Log in to edit your website
+      </h1>
+      <div class="row mb-3">
+        <label for="" class="form-label">E-mail address</label>
+        <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId"
+          placeholder="abc@mail.com" />
+      </div>
+      <div class="row mb-3">
+        <label for="" class="form-label">Password
+          <span class="link-primary float-end">Forgot password?</span></label>
+
+        <input type="password" class="form-control" name="" id="" placeholder="" />
+      </div>
+      <button type="button" class="btn btn-success" data-bs-toggle="tooltip" title="Login!">
+        Log In
+      </button>
+      <a href="#!Signup" class="link-primary" style="display: block; margin-top: 25px; text-align: center">New user?
+        Create an
+        account!</a>
+    </div>
+  </div>
+</body>
+<!-- scrips js,jquery -->
+<script>
+  // Initialize tooltips
+  var tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  );
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+</script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+  var app = angular.module("login", ["ngRoute"]);
+  app.config(function ($routeProvider) {
+    $routeProvider
+      .when("/login", {
+        templateUrl: "login.html?" + Math.random(),
+      })
+      .when("/Signup", {
+        templateUrl: "Signup.html?" + Math.random(),
+      })
+      .otherwise({
+        redirectTo: "/login",
+      });
+  });
+
+</script>
+
+</html>

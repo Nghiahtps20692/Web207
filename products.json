@@ -1,0 +1,93 @@
+[
+    {
+        "id":"page1",
+        "name": "Demo-anna",
+        "Image": "images/demo-anna.jpg",
+        "Price": 1200
+        
+       },
+       {
+        "id":"page2",
+        "name": "Demo-minimal",
+        "Image": "images/demo-minimal.jpg",
+        "Price": 1400
+       },
+       {
+        "id":"page3",
+        "name": "demo-restaurant",
+        "Image": "images/demo-restaurant.jpg",
+        "Price": 2000
+       },
+       {
+        "id":"page4",
+        "name": "demo-solutions",
+        "Image": "images/demo-solutions.jpg",
+        "Price": 2000
+       },
+       {
+        "id":"page5",
+        "name": "The Architect Company",
+        "Image": "images/preview.jpg",
+        "Price": 1200
+        
+       },
+       {
+        "id":"page6",
+        "name": "The Artist",
+        "Image": "images/preview1.jpg",
+        "Price": 1400
+       },
+       {
+        "id":"page7",
+        "name": "GENTLEMENSCLUB",
+        "Image": "images/preview2.jpg",
+        "Price": 2000
+       },
+       {
+        "id":"page8",
+        "name": "BeautiLab",
+        "Image": "images/preview3.jpg",
+        "Price": 2000
+       },
+       {
+        "id":"page9",
+        "name": "demo-restaurant",
+        "Image": "images/preview4.jpg",
+        "Price": 2000
+       },
+       {
+        "id":"page10",
+        "name": "Bon Appétit",
+        "Image": "images/preview5.jpg",
+        "Price": 2000
+       },
+       {
+        "id":"page11",
+        "name": "demo-restaurant",
+        "Image": "images/preview6.jpg",
+        "Price": 2000
+       },
+       {
+        "id":"page12",
+        "name": "demo-solutions",
+        "Image": "images/preview7.jpg",
+        "Price": 2000
+       },
+       {
+        "id":"page13",
+        "name": "demo-restaurant",
+        "Image": "images/preview8.jpg",
+        "Price": 2000
+       },
+       {
+        "id":"page14",
+        "name": "demo-solutions",
+        "Image": "images/preview9.jpg",
+        "Price": 2000
+       },{
+        "id":"page15",
+        "name": "demosolutions",
+        "Image": "images/preview10.jpg",
+        "Price": 2000
+       }
+]

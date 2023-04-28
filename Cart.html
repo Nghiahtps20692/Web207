@@ -1,0 +1,27 @@
+<table class="table">
+    <tr>
+        <th>Tên sản phẩm</th>
+        <th>Hình ảnh</th>
+        <th>Giá</th>
+        <th>Số lượng</th>
+        <th>Thành tiền</th>
+        <th> </th>
+    </tr>
+    <tr ng-repeat="c in cart track by $index" class="align-middle">
+        <td>{{c.name}}</td>
+        <td><img width="400px" src="{{c.Image}}" alt=""></td>
+        <td>{{c.Price |currency: 'đ' :3}}</td>
+        <td><span ng-click="subClick($index)">-</span> {{c.quantity}} <span ng-click="addClick($index)">+</span></td>
+        <td>{{c.Price*c.quantity | currency: 'đ' :3 }}</td>
+        <td> <span ng-click="delProduct($index)">Xóa</span></td>
+    </tr>
+    <tr>
+        <td colspan="4">Tổng tiền:</td>
+        <td colspan="2">{{sumMoney | currency: 'đ' :3}}</td>
+    </tr>
+</table>
+
+<br>
+<a href="#!Examples">
+    <button class="btn btn-secondary mb-5">Mua các sản phẩm khác</button>
+</a>
